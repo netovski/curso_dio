@@ -20,11 +20,16 @@ while True:
     if opcao  == "1":
         print("Depósito")
         deposito = float(input("Qual o valor que deseja depositar? "))
-        if deposito < 100:
+        if deposito > 0:
+            saldo += deposito
+            print(f"Você depositou R${deposito:.2f}!")
+            extrato += f"Depósito de R${deposito:.2f}\n"
+            
+        elif deposito < 100:
             print("O valor mínimo de depósito é R$100,00")
-        print(f"Você depositou R${deposito:.2f}!")
-        saldo = deposito
-        extrato += f"Depósito de R${deposito:.2f}\n"
+            
+        else:
+            print("A operação falhou! O valor informado é inválido.")
 
         
     elif opcao == "2":
