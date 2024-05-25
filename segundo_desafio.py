@@ -5,6 +5,7 @@ def menu():
 [3] Extrato
 [4] Criar Usuário
 [5] Criar Conta Corrente
+[6] Listar Contas
 [0] Sair
 => """
 
@@ -64,6 +65,17 @@ def criar_conta_corrente(agencia, contas, usuarios):
     print(f"Conta corrente criada com sucesso! Agência: {agencia}, Número da Conta: {numero_conta}")
     return contas
 
+def listar_contas(contas):
+    if not contas:
+        print("Não há contas cadastradas.")
+        return
+
+    for conta in contas:
+        usuario = conta["usuario"]
+        print(f"Agência: {conta['agencia']}, Número da Conta: {conta['numero_conta']}")
+        print(f"Titular: {usuario['nome']}, CPF: {usuario['cpf']}")
+        print("-" * 30)
+
 def main():
     saldo = 0
     limite = 500
@@ -93,6 +105,9 @@ def main():
         
         elif opcao == "5":
             contas = criar_conta_corrente(AGENCIA, contas, usuarios)
+            
+        elif opcao == "6":
+            listar_contas(contas)
         
         elif opcao == "0":
             break
