@@ -94,7 +94,8 @@ Exibir Extrato
 Criar Usuário
 Criar Conta Corrente
 Sair
-Exemplo de Uso
+
+EXEMPLO DE COMO USAR A APLICAÇÃO
 O usuário escolhe uma opção do menu para realizar uma operação.
 O sistema solicita os dados necessários para a operação escolhida.
 O sistema atualiza os dados e exibe informações relevantes (como saldo e extrato).
